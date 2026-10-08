@@ -1,6 +1,5 @@
 # Name: Sheron Smith
 # Date: September 22, 2026
-# Assignment: Lab 11
 # This program checks if a date is real.
 # Input: A day, month, and year
 # Output: If those numbers make a real date or not
