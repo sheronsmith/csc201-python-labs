@@ -1,6 +1,5 @@
 # Name: Sheron Smith
 # Date: October 6, 2026
-# Assignment: Lab 13
 # This program finds the GCD of two whole numbers. The GCD is the biggest
 # number that goes into both of them evenly.
 # Inputs: Two whole numbers (they can be negative)
