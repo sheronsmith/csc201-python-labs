@@ -1,21 +1,22 @@
 # Name: Sheron Smith
 # Date: October 6, 2026
 # Assignment: Lab 13
-# Find the greatest common divisor (GCD) of two whole numbers
-# Inputs: Two whole numbers (they may be negative)
+# This program finds the GCD of two whole numbers. The GCD is the biggest
+# number that goes into both of them evenly.
+# Inputs: Two whole numbers (they can be negative)
 # Output: The GCD of the two numbers
 
 def find_gcd(m: int, n: int) -> int:
-    # Given two whole numbers M and N, return their GCD using Euclid's method
+    # Takes two numbers M and N and gives back their GCD using Euclid's trick
     while m != 0:
-        m, n = n % m, m  # Euclid's step; m gets smaller each time
-    # Python's % can leave n negative, but a GCD is never negative
+        m, n = n % m, m  # Euclid's step, m gets smaller every time
+    # Python's % can make n negative, but a GCD can't be negative, so flip it
     if n < 0:
         n = -n
     return n
 
 def main(args: list[str]) -> int:
-    # Read two whole numbers and print their GCD
+    # Asks for two numbers and shows their GCD
     print('This program finds the greatest common divisor (GCD)')
     print('of two whole numbers.')
     print()
