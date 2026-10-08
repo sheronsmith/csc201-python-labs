@@ -1,4 +1,4 @@
-# Lab 8: Prints all 10 verses of the song "This Old Man."
+# Prints all 10 verses of the song "This Old Man."
 
 def print_verse(number_word: str, second_line: str) -> None:
     # Prints one verse. The number and the second line change each time.
