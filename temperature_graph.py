@@ -1,3 +1,7 @@
+# Name: Sheron Smith
+# This program draws a bar graph of the high temperature each day for a week
+# in Spartanburg, SC. Click the window to close it.
+
 from graphics import *
 
 def main(args: list[str]) -> int:
@@ -5,10 +9,10 @@ def main(args: list[str]) -> int:
     w: GraphWin = GraphWin('Daily High Temperatures', 800, 800)
     w.setCoords(-1, -10, 8, 110)
 
-    # Source: Open-Meteo Historical Weather API, Spartanburg, SC, accessed Sep. 4, 2026.
+    # Where I got the data: Open-Meteo Historical Weather API, Spartanburg, SC, accessed Sep. 4, 2026.
     # https://archive-api.open-meteo.com/v1/archive?latitude=34.9496&longitude=-81.9320&start_date=2026-08-28&end_date=2026-09-03&daily=temperature_2m_max&temperature_unit=fahrenheit&timezone=America%2FNew_York
 
-    # Draw the axes with temperature increasing upward.
+    # Draw the lines for the graph. Temperature goes up the side.
     x_axis: Line = Line(Point(0, 0), Point(8, 0))
     x_axis.setOutline('black')
     x_axis.draw(w)
@@ -17,7 +21,7 @@ def main(args: list[str]) -> int:
     y_axis.setOutline('black')
     y_axis.draw(w)
 
-    # Add labels to the temperature axis.
+    # Put numbers on the side so you can read the temperature.
     zero_label: Text = Text(Point(-0.3, 0), '0')
     zero_label.setFill('black')
     zero_label.draw(w)
@@ -42,7 +46,7 @@ def main(args: list[str]) -> int:
     one_hundred_label.setFill('black')
     one_hundred_label.draw(w)
 
-    # Draw the bars for Spartanburg's daily high temperatures in degrees F.
+    # Draw a bar for the high temperature each day (in degrees F).
     august_28_bar: Rectangle = Rectangle(Point(0.7, 0), Point(1.3, 87.6))
     august_28_bar.setFill('sky blue')
     august_28_bar.setOutline('sky blue')
@@ -78,7 +82,7 @@ def main(args: list[str]) -> int:
     september_3_bar.setOutline('sky blue')
     september_3_bar.draw(w)
 
-    # Label every date on the X axis.
+    # Put the date under each bar.
     august_28_date: Text = Text(Point(1, -5), 'Aug 28')
     august_28_date.setFill('black')
     august_28_date.draw(w)
@@ -107,7 +111,7 @@ def main(args: list[str]) -> int:
     september_3_date.setFill('black')
     september_3_date.draw(w)
 
-    # Label the high temperature for each bar.
+    # Put the temperature on top of each bar.
     august_28_temperature: Text = Text(Point(1, 90), '87.6 F')
     august_28_temperature.setFill('black')
     august_28_temperature.draw(w)
@@ -136,13 +140,13 @@ def main(args: list[str]) -> int:
     september_3_temperature.setFill('black')
     september_3_temperature.draw(w)
 
-    # Add a title for the graph.
+    # Add a title at the top of the graph.
     graph_title: Text = Text(Point(4, 106), 'Spartanburg, SC Daily High Temperatures')
     graph_title.setFill('black')
     graph_title.setSize(16)
     graph_title.draw(w)
 
-    # Wait for a mouse click and then close the window
+    # Wait for a click, then close the window.
     w.getMouse()
     w.close()
     
