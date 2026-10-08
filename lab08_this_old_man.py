@@ -1,7 +1,7 @@
-# Lab 8: Print the ten verses of "This Old Man."
+# Lab 8: Prints all 10 verses of the song "This Old Man."
 
 def print_verse(number_word: str, second_line: str) -> None:
-    # Print one verse using the changing number and second line.
+    # Prints one verse. The number and the second line change each time.
     print('This old man, he played ' + number_word + ',')
     print(second_line)
     print('With a knick-knack paddywhack,')
@@ -11,7 +11,7 @@ def print_verse(number_word: str, second_line: str) -> None:
 
 
 def main(args: list[str]) -> int:
-    # Call the same function once for each of the ten verses.
+    # Uses the same function 10 times, once for each verse.
     print_verse('one', 'He played knick-knack on my thumb.')
     print_verse('two', 'He played knick-knack on my shoe.')
     print_verse('three', 'He played knick-knack on my knee.')
