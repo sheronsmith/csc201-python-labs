@@ -1,11 +1,12 @@
 # Name: Sheron Smith
 # Date: September 22, 2026
 # Assignment: Lab 11
-# Input: A day, month, and year.
-# Output: Whether the three numbers make a valid Gregorian calendar date.
+# This program checks if a date is real.
+# Input: A day, month, and year
+# Output: If those numbers make a real date or not
 
 def leapyear(year: int) -> bool:
-    # Return whether the given year is a Gregorian leap year.
+    # Tells if the YEAR is a leap year (a year that has Feb 29)
     is_leap: bool = (year % 4) == 0
     if is_leap:
         is_leap = ((year % 100) != 0) or ((year % 400) == 0)
@@ -13,15 +14,15 @@ def leapyear(year: int) -> bool:
 
 
 def main(args: list[str]) -> int:
-    # Read the day, month, and year from the user.
+    # Ask for the day, month, and year.
     day: int = int(input('Please enter the day: '))
     month: int = int(input('Please enter the month: '))
     year: int = int(input('Please enter the year: '))
 
-    # Start by assuming the date is valid.
+    # Start out saying the date is good.
     valid_date: bool = True
 
-    # Check the year, month, and lowest possible day.
+    # Check the year (our calendar started in 1582), the month, and if the day is at least 1.
     if year <= 1582:
         valid_date = False
     elif month < 1 or month > 12:
@@ -29,7 +30,7 @@ def main(args: list[str]) -> int:
     elif day < 1:
         valid_date = False
     elif month == 2:
-        # February has 29 days in a leap year and 28 days otherwise.
+        # February has 29 days in a leap year and 28 days the rest of the time.
         if leapyear(year):
             if day > 29:
                 valid_date = False
@@ -41,11 +42,11 @@ def main(args: list[str]) -> int:
         if day > 30:
             valid_date = False
     else:
-        # The remaining months have 31 days.
+        # All the other months have 31 days.
         if day > 31:
             valid_date = False
 
-    # Print the result of the date check.
+    # Show if the date is real or not.
     if valid_date:
         print('This is a valid date.')
     else:
