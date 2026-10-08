@@ -1,6 +1,5 @@
 # Name: Sheron Smith
 # Date: October 1, 2026
-# Assignment: Lab 12
 # This program tells you your class standing (freshman, sophomore, junior,
 # or senior) based on how many credit hours you have.
 # Inputs: How many credit hours you have done
